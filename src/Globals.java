@@ -7,6 +7,7 @@ public class Globals {
 
 
 
+
     public static int cameraX = 0;
     public static int cameraY = 0;
     public static int cameraZ = -100;
@@ -16,6 +17,8 @@ public class Globals {
 
 
     static double[] light = new double[]{0, -1, 0};
+    static double[] lighting = new double[] {-1 * 400, 400 *(-1 + (double)2/11), 400 * (-1 + (double)4/11), 400 * (-1 + (double)6/11), 400 * (-1 + (double)8/11), 400 * (-1 + (double)10/11 ), 400 * (-1 + (double) 12 /11), 400 * (-1 + (double)14/11), 400 * (-1 + (double)16/11), 400 * (-1 + (double)18/11), 400 * (-1 + (double)20/11), 400 *(-1 + (double)22/11) };
+    static double[] lighting2 = new double[]{-400, -320, -240, -160, -80, 0, 80, 160, 240, 320, 400};
 
     static double[][] Rx = new double[][]{
             {1, 0, 0 },

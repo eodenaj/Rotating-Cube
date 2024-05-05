@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76c8347f-4dc4-42fe-96fc-ef7552369428" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/acube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/acube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/face.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/face.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

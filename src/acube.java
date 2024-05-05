@@ -107,35 +107,30 @@ public class acube {
 
 
     void draw(Graphics g){
-        int count = 0;
         for(int i = 0; i < 6; i++){
             if(! face_visibibility[i]){
                 continue;
             }
-            g.setColor(Color.BLUE);
-            if(face_visibibility[i]){
-                count++;
-                g.setColor(new Color(220, 37, 37, 155));
-            }
+
             all_faces[i].find_light_exposure();
-            if(all_faces[i].light_exposure > 0){
-                g.setColor(new Color(180, 113, 113, 155));
-            }
-            if(all_faces[i].light_exposure > 1){
-                g.setColor(new Color(170, 218, 236, 155));
-            }
+            int scaler = all_faces[i].light_exposure;
+//            scaler = 10 - scaler;
+            g.setColor(new Color(20 + 16 * scaler, 20 + 16 * scaler, 20 + 16 * scaler, 20 + 16 * scaler));
+
+
+
             all_faces[i].update_node_adjuste();
             g.fillPolygon(all_faces[i].all_x_adjusted, all_faces[i].all_y_adjusted, 4);
             g.drawPolygon(all_faces[i].all_x_adjusted, all_faces[i].all_y_adjusted, 4);
         }
 
-        System.out.println(count);
 
-        for(node i: all_vertices){
-            if( closest_nodes.contains(i)){
-                i.draw(g);
-            }
-        }
+//        for(node i: all_vertices){
+//            if( closest_nodes.contains(i)){
+//                i.draw(g);
+//            }
+//        }
+
     }
 
 
