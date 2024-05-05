@@ -9,7 +9,7 @@ public class Globals {
 
     public static int cameraX = 0;
     public static int cameraY = 0;
-    public static int cameraZ = -40;
+    public static int cameraZ = 100;
 
     public static final int dist_camera_to_screen = 60;
     static double theta = Math.PI/16;
@@ -19,6 +19,7 @@ public class Globals {
             {0, Math.cos(theta), - Math.sin(theta)},
             {0, Math.sin(theta), Math.cos(theta)}
     };
+
 
     static double[][] Ry = new double[][]{
             {Math.cos(theta), 0, Math.sin(theta)},

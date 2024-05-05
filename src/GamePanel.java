@@ -49,7 +49,7 @@ class GamePanel extends JPanel implements KeyListener, ActionListener, MouseList
 
 
 
-        timer = new Timer(1000/5, this);
+        timer = new Timer(4000, this);
         timer.start();
     }
 
@@ -59,10 +59,11 @@ class GamePanel extends JPanel implements KeyListener, ActionListener, MouseList
     }
 
     public void move() {
-//        CUBE.rotate();
-//        CUBE.Coordinate_Conversion_3to2D();
         CUBE.node_update();
         CUBE.projection_3D2D();
+        CUBE.node_to_cam_dist_update();
+        CUBE.closest_node_to_cam();
+        CUBE.update_visible_vertices();
 
     }
 

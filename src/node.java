@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class node {
     //3D coordinate
     double x, y, z;
@@ -24,8 +26,13 @@ public class node {
     }
 
     void adjust_for_view(){
-        x_adjusted = (int)((x2 - Globals.cameraX) * 10 )+ Globals.SCREEN_WIDTH/ 2 ;
-        y_adjusted = (int)((y2 - Globals.cameraY) * 10) + Globals.SCREEN_HEIGHT/2 ;
+        x_adjusted = (int)((x2) * 10 )+ Globals.SCREEN_WIDTH/ 2 ;
+        y_adjusted = (int)((y2) * 10) + Globals.SCREEN_HEIGHT/2 ;
+    }
+
+    void draw(Graphics g){
+        g.setColor(Color.red);
+        g.drawOval(x_adjusted, y_adjusted, 5, 5);
     }
 
 
