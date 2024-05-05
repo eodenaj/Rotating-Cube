@@ -15,7 +15,7 @@ public class Globals {
     static double theta = Math.PI/16;
 
 
-    static double[] light = new double[]{1, 0, 0};
+    static double[] light = new double[]{0, -1, 0};
 
     static double[][] Rx = new double[][]{
             {1, 0, 0 },

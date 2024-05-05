@@ -117,6 +117,7 @@ public class acube {
                 count++;
                 g.setColor(new Color(220, 37, 37, 155));
             }
+            all_faces[i].find_light_exposure();
             if(all_faces[i].light_exposure > 0){
                 g.setColor(new Color(180, 113, 113, 155));
             }
