@@ -71,8 +71,13 @@ class GamePanel extends JPanel implements KeyListener, ActionListener, MouseList
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        Graphics2D g2d = (Graphics2D)(g);
-        CUBE.draw(g);
+        g.setColor(new Color(0,0, 0, 249));
+        g.fillRect(0, 0, Globals.SCREEN_WIDTH, Globals.SCREEN_HEIGHT);
+        try {
+            CUBE.draw(g);
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

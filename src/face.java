@@ -33,12 +33,12 @@ public class face {
 
     void find_light_exposure(){
         double magnitude = Globals.dotProduct(normal_vec(), Globals.light);
-        System.out.println(magnitude);
+        //System.out.println(magnitude);
 
         for( int i = 0; i < 11; i++){
             if(magnitude < Globals.lighting2[i]){
                 light_exposure = i - 1;
-                System.out.println(String.format("(%.2f, %d)", magnitude, light_exposure));
+                //System.out.println(String.format("(%.2f, %d)", magnitude, light_exposure));
                 break;
             }
         }
