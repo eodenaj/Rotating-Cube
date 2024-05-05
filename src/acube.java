@@ -52,7 +52,7 @@ public class acube {
     void node_to_cam_dist_update(){
         for(int i = 0; i < 8; i++){
             node this_node = all_vertices[i];
-            cam_to_vertice_dist[i] = Globals.dist_between_point(this_node.x, this_node.y, this_node.z, Globals.cameraX, Globals.cameraY, Globals.cameraZ);
+            cam_to_vertice_dist[i] = Math.abs(this_node.z - Globals.cameraZ);
         }
     }
 
