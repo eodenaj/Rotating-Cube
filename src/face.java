@@ -5,6 +5,7 @@ public class face {
     ArrayList<node> all_vertices = new ArrayList<node>();
     int[] all_x_adjusted;
     int[] all_y_adjusted;
+    int light_exposure;
 
     public face(node vertice1, node vertice2, node vertice3, node vertice4){
         this.vertice1 = vertice1;
@@ -22,6 +23,25 @@ public class face {
     void update_node_adjuste(){
         all_x_adjusted = new int[]{vertice1.x_adjusted, vertice2.x_adjusted, vertice3.x_adjusted, vertice4.x_adjusted};
         all_y_adjusted = new int[]{vertice1.y_adjusted, vertice2.y_adjusted, vertice3.y_adjusted, vertice4.y_adjusted};
+    }
+
+    double[] normal_vec(){
+        double[] plane_vec1 = new double[]{vertice1.x - vertice2.x, vertice1.y - vertice2.y, vertice1.z - vertice2.z};
+        double[] plane_vec2 = new double[]{vertice1.x - vertice3.x, vertice1.y - vertice3.y, vertice1.z - vertice3.z};
+        return Globals.crossProduct(plane_vec1, plane_vec2);
+    }
+
+    void find_light_exposure(){
+        double magnitude = Globals.dotProduct(normal_vec(), Globals.light);
+        if(magnitude > 0){
+            light_exposure = 1;
+        }
+        else if(magnitude > 1){
+            light_exposure = 2;
+        }
+        else{
+            light_exposure = 0;
+        }
     }
 
     boolean has_this_1_vertice(node node1){
@@ -44,6 +64,10 @@ public class face {
         }
         return false;
     }
+
+
+
+
 
 
 }

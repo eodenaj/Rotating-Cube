@@ -26,8 +26,8 @@ public class node {
     }
 
     void adjust_for_view(){
-        x_adjusted = (int)((x2) * 10 )+ Globals.SCREEN_WIDTH/ 2 ;
-        y_adjusted = (int)((y2) * 10) + Globals.SCREEN_HEIGHT/2 ;
+        x_adjusted = (int)((x2) * 30 )+ Globals.SCREEN_WIDTH/ 2 ;
+        y_adjusted = (int)((y2) * 30) + Globals.SCREEN_HEIGHT/2 ;
     }
 
     void draw(Graphics g){

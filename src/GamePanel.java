@@ -49,7 +49,7 @@ class GamePanel extends JPanel implements KeyListener, ActionListener, MouseList
 
 
 
-        timer = new Timer(4000, this);
+        timer = new Timer(1000/5, this);
         timer.start();
     }
 

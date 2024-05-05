@@ -9,10 +9,13 @@ public class Globals {
 
     public static int cameraX = 0;
     public static int cameraY = 0;
-    public static int cameraZ = 100;
+    public static int cameraZ = -100;
 
     public static final int dist_camera_to_screen = 60;
     static double theta = Math.PI/16;
+
+
+    static double[] light = new double[]{1, 0, 0};
 
     static double[][] Rx = new double[][]{
             {1, 0, 0 },
@@ -34,7 +37,7 @@ public class Globals {
     };
 
     public static double[] Project_3D_to_2D(double px, double py, double pz){
-        return new double[]{(px * dist_camera_to_screen/(pz  + cameraZ)), (py * dist_camera_to_screen/(pz + cameraZ)) };
+        return new double[]{((px - cameraZ) * dist_camera_to_screen/(pz  - cameraZ)), ((py - cameraZ) * dist_camera_to_screen/(pz - cameraZ)) };
     }
 
 
@@ -83,6 +86,17 @@ public class Globals {
         return ( v1[0] * v2[0] + v1[1] * v2[1] + v1[2] * v2[2]);
     }
 
+    public static double[] crossProduct(double[] v1, double[] v2){
+        double a = v1[0];
+        double b = v1[1];
+        double c = v1[2];
+        double d = v2[0];
+        double e = v2[1];
+        double f = v2[2];
+
+        return new double[] { b * f - c * e, c * d - a * f, a * e - b * d};
+    }
+
     public static double[] vector_scale(double[] vec, double scale){
         return new double[] {
                 vec[0] * scale,
@@ -90,6 +104,7 @@ public class Globals {
                 vec[2] * scale
         };
     }
+
 
     public static double[] line_plane_intersectoin(double[] lineVec1, double[] lineVec2, double[] point, double[] vecNormal ) {
         double[] line = subv3d(lineVec1, lineVec2);

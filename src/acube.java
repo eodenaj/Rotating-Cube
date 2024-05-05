@@ -59,7 +59,7 @@ public class acube {
     ArrayList<node> closest_node_to_cam(){
         ArrayList<node> closest_nodes = new ArrayList<node>();
         // node with minimum distance
-        double min_dist =  Arrays.stream(cam_to_vertice_dist).min().getAsDouble();
+        double min_dist =  Arrays.stream(cam_to_vertice_dist).max().getAsDouble();
         for(int i = 0; i < 8; i++){
             if( cam_to_vertice_dist[i] == min_dist ){
                 closest_nodes.add(all_vertices[i]);
@@ -115,9 +115,16 @@ public class acube {
             g.setColor(Color.BLUE);
             if(face_visibibility[i]){
                 count++;
-                g.setColor(Color.CYAN);
+                g.setColor(new Color(220, 37, 37, 155));
+            }
+            if(all_faces[i].light_exposure > 0){
+                g.setColor(new Color(180, 113, 113, 155));
+            }
+            if(all_faces[i].light_exposure > 1){
+                g.setColor(new Color(170, 218, 236, 155));
             }
             all_faces[i].update_node_adjuste();
+            g.fillPolygon(all_faces[i].all_x_adjusted, all_faces[i].all_y_adjusted, 4);
             g.drawPolygon(all_faces[i].all_x_adjusted, all_faces[i].all_y_adjusted, 4);
         }
 
